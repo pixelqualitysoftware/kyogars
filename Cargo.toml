@@ -2,7 +2,7 @@
 name = "kyogars"
 version = "0.1.0"
 edition = "2024"
-description = "Parser for the Kyogas (.kyo) data format"
+description = "Parser for the Kyogas (.kyo) markup language"
 license = "GPL-3.0-or-later"
 repository = "https://github.com/pixelqualitysoftware/kyogars"
 keywords = ["parser", "config", "serialization"]
@@ -12,6 +12,7 @@ categories = ["parser-implementations"]
 nom = "7"
 thiserror = "1"
 serde = { version = "1", features = ["derive"], optional = true }
+logos = "0.16.1"
 
 [features]
 serde = ["dep:serde"]

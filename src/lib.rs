@@ -11,7 +11,13 @@
 
 // src/lib.rs
 
-pub fn load_file() -> String {
-    let string = String::from("curse words");
-    string
+mod errors;
+mod lexer;
+mod parser;
+use errors::KyoError;
+use parser::ParseOutcome;
+
+pub fn load_file(path: impl AsRef<std::path::Path>) -> Result<ParseOutcome, KyoError> {
+    let mut file = std::fs::File::open(path)?;
+    parser::parse_file(&mut file)
 }
